@@ -1,5 +1,5 @@
 # CSNN_self_driving
-Convolutional Spiking Neural Networks y Sostenibilidad en Conducción Autónoma
+
 
 **Keywords: Convolutional Spiking Neural Networks (CSNN), Self-driving, Sustainable Neural Network Training**
 
