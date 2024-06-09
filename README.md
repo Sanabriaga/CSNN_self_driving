@@ -11,11 +11,12 @@ Los resultados obtenidos contribuirán al conocimiento sobre la aplicación de S
 
 # Contenido
 
-1. Inspiración: Hombros de Gigantes
-2. Objetivos
-3. Fuente de datos 
-4. Condificando datos convenicionales en impulsos con modulación Delta con la librería snnTorch
-5. Implementando PilotNet en CSNN
-6. Entrenando la CSNN
-7. Midiendo la Ecoeficiencia del entrenamiento
-8. Resultados
+1. Introducción
+2. Recursos
+3. Objetivos
+4. Fuente de datos 
+5. Condificando datos convenicionales en impulsos con modulación Delta con la librería snnTorch
+6. Implementando PilotNet en CSNN
+7. Entrenando la CSNN
+8. Midiendo la Ecoeficiencia del entrenamiento
+9. Resultados
