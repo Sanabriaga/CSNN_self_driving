@@ -35,7 +35,7 @@ Este proyecto utiliza scripts de [Python](https://www.python.org/) que corren so
 
 La implementación de las redes neuronales de impulsos (SNNs) y particularmente de las CSNNs se realiza con la librería snnTorch [snnTorch](https://snntorch.readthedocs.io/en/latest/index.html#), en GitHub se encuentra disponible en este [enlace](https://github.com/jeshraghian/snntorch).
 
-La arquitectura de la CSNNs corresponde a una adaptación de [PilotNet](https://snntorch.readthedocs.io/en/latest/index.html#).
+La arquitectura de la CSNNs corresponde a una adaptación de [PilotNet](https://github.com/lhzlhz/PilotNet)).
 
 La ecoeficiencia del proceso (energía consumida y emisiones generadas) se mide haciendo uso de la librería [CodeCarbon](https://codecarbon.io/).
 
