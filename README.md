@@ -13,7 +13,7 @@ Los resultados obtenidos contribuirán al conocimiento sobre la aplicación de S
 
 1. Diagrama del proyecto
 2. Recursos
-3. Objetivos
+3. Objetivo
 4. Fuente de datos 
 5. Condificando datos convenicionales en impulsos con modulación Delta con la librería snnTorch
 6. Implementando PilotNet en CSNN
@@ -26,3 +26,18 @@ Los resultados obtenidos contribuirán al conocimiento sobre la aplicación de S
 A continuación, se presenta un diagrama general del proyecto:
 
 ![Diagrama_proyecto](Images/Diagrama_proyecto.svg)
+
+## 2. Recursos
+
+El conjunto de imágenes que se utilizan como insumo para el proyecto, así como el conjunto de datos codificado en impulsos (Spikes) se almacenan en [Google Drive](https://drive.google.com) en formato [HDF5](https://docs.h5py.org/en/stable/index.html).
+
+Este proyecto utiliza scripts de [Python](https://www.python.org/) que corren sobre [Google Colab](https://colab.research.google.com/) y para probar el modelo obtenido se realiza una conexión local con el simulador de conducción autónoma de [Udacity](https://github.com/udacity/self-driving-car-sim) creando un entorno de ejecución virtual utilizando el Prompt de [Anaconda](https://www.anaconda.com/).
+
+La implementación de las redes neuronales de impulsos (SNNs) y particularmente de las CSNNs se realiza con la librería snnTorch [snnTorch](https://snntorch.readthedocs.io/en/latest/index.html#), en GitHub se encuentra disponible en este [enlace](https://github.com/jeshraghian/snntorch).
+
+La arquitectura de la CSNNs corresponde a una adaptación de [PilotNet](https://snntorch.readthedocs.io/en/latest/index.html#).
+
+La ecoeficiencia del proceso (energía consumida y emisiones generadas) se mide haciendo uso de la librería [CodeCarbon](https://codecarbon.io/).
+
+
+
