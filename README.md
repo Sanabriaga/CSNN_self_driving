@@ -7,11 +7,11 @@ Los avances en Inteligencia Artificial y Machine Learning están transformando d
 
 Este trabajo presenta el entrenamiento de una Red Neuronal Convolucional de Impulsos (CSNN, por sus siglas en inglés) utilizando técnicas de aprendizaje profundo para la conducción autónoma de vehículos, mientras se mide la ecoeficiencia del proceso de entrenamiento. Para ello, se emplean scripts de Python, las librerías snnTorch y CodeCarbon, entre otras, así como el simulador de conducción autónoma de Udacity. Se transforman los datos de conducción convencional en un formato compatible con CSNN mediante modulación delta, y se compara el rendimiento y la sostenibilidad de la CSNN con una CNN convencional.
 
-Los resultados obtenidos contribuirán al conocimiento sobre la aplicación de SNNs en la conducción autónoma y su potencial para reducir el impacto ambiental de los algoritmos de aprendizaje profundo.
+Los resultados obtenidos contribuirán al conocimiento sobre la aplicación de SNNs en la conducción autónoma y su potencial para reducir el impacto ambiental de los algoritmos de aprendizaje profundo. 
 
 # Contenido
 
-1. Introducción
+1. Diagrama del proyecto
 2. Recursos
 3. Objetivos
 4. Fuente de datos 
@@ -20,3 +20,9 @@ Los resultados obtenidos contribuirán al conocimiento sobre la aplicación de S
 7. Entrenando la CSNN
 8. Midiendo la Ecoeficiencia del entrenamiento
 9. Resultados
+
+## 1. Diagrama del proyecto
+
+A continuación, se presenta un diagrama general del proyecto:
+
+![Diagrama_proyecto](Images/Diagrama_proyecto.svg)
