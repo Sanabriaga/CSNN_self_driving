@@ -15,10 +15,9 @@ Los resultados obtenidos contribuirán al conocimiento sobre la aplicación de S
 2. Recursos
 3. Objetivo
 4. Condificando datos convenicionales en impulsos con modulación Delta con la librería snnTorch
-5. Implementando PilotNet en CSNN
-6. Entrenando la CSNN
-7. Midiendo la Ecoeficiencia del entrenamiento
-8. Resultados
+5. Implementando y entrenando la CSNN (adaptación de PilotNet)
+6. Midiendo la Ecoeficiencia del entrenamiento
+7. Resultados
 
 ## 1. Diagrama del proyecto
 
@@ -47,4 +46,12 @@ Por otra parte, también es importante mencionar el artículo que sirve como ref
 Entrenar una red Red Neuronal Convolucional de Impulsos (CSNN) transformando un conjunto de datos convencionales de conducción autónoma y comparar los resultados en términos de rendimiento y sostenibilidad ambiental con los obtenidos en el entrenamiento de una Red Neuronal Convolucional (CNN) con el mismo conjunto de datos.
 
 ## 4. Condificando datos convenicionales en impulsos con modulación Delta con la librería snnTorch
+
+El archivo *Optimization_Encode_Spikes_v12.ipynb* contiene el código por medio del cual se cargan, preprocesan, transforman, aumentan y codifican las imágenes en impulsos. Básicamente se cargan los datos generados por el simulador de Udacity en Google Drive y desde allí se utilizan como insumo. Al finalizar el proceso, en Google Drive se cargan dos archivos, que corresponden a los  datos de entrenamiento y validación codificados en impulsos y que se guardan en formato hdf5.
+
+## 5. Implementando y entrenando la CSNN (adaptación de PilotNet)
+
+El archivo *Optimization train CSNN v13.ipynb* contiene el código por medio del cual se define la arquitectura adaptada de PilotNet para construir la CSNN. Se adapta en varios aspectos, el primero es el uso de neuronas con modelo Leaky Integrate-and-Fire (LIF), el segundo es la eliminación de una capa convolucional, dejando cuatro capas convolucionales y cuatro capas completamente conectadas y finalmente la salida corresponde a 21 neuronas que codifican el valor del ángulo de giro del volante entre -1 y 1 en 21 pasos, es decir, la activación de la neurona 0 corresponde al ángulo -1, la activación de la neurona 10 al ángulo 0 y la activación de la neurona 20 al ángulo 1, con los posibles pasos intermedios entre estos valores.
+
+## 6. Midiendo la Ecoeficiencia del entrenamiento
 
