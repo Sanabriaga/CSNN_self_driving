@@ -14,12 +14,11 @@ Los resultados obtenidos contribuirán al conocimiento sobre la aplicación de S
 1. Diagrama del proyecto
 2. Recursos
 3. Objetivo
-4. Fuente de datos 
-5. Condificando datos convenicionales en impulsos con modulación Delta con la librería snnTorch
-6. Implementando PilotNet en CSNN
-7. Entrenando la CSNN
-8. Midiendo la Ecoeficiencia del entrenamiento
-9. Resultados
+4. Condificando datos convenicionales en impulsos con modulación Delta con la librería snnTorch
+5. Implementando PilotNet en CSNN
+6. Entrenando la CSNN
+7. Midiendo la Ecoeficiencia del entrenamiento
+8. Resultados
 
 ## 1. Diagrama del proyecto
 
@@ -43,5 +42,9 @@ La ecoeficiencia del proceso (energía consumida y emisiones generadas) se mide 
 
 Por otra parte, también es importante mencionar el artículo que sirve como referencia e inspiración para este trabajo:  Martínez, F. S., Parada, R., & Casas-Roma, J. (2023). CO2 impact on convolutional network model training for autonomous driving through behavioral cloning. Advanced Engineering Informatics, 56, 101968. [https://doi.org/10.1016/j.aei.2023.101968](https://doi.org/10.1016/j.aei.2023.101968) 
 
+## 3. Objetivo
 
+Entrenar una red Red Neuronal Convolucional de Impulsos (CSNN) transformando un conjunto de datos convencionales de conducción autónoma y comparar los resultados en términos de rendimiento y sostenibilidad ambiental con los obtenidos en el entrenamiento de una Red Neuronal Convolucional (CNN) con el mismo conjunto de datos.
+
+## 4. Condificando datos convenicionales en impulsos con modulación Delta con la librería snnTorch
 
