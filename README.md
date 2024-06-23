@@ -17,7 +17,8 @@ Los resultados obtenidos contribuirán al conocimiento sobre la aplicación de S
 4. Condificando datos convenicionales en impulsos con modulación Delta con la librería snnTorch
 5. Implementando y entrenando la CSNN (adaptación de PilotNet)
 6. Midiendo la Ecoeficiencia del entrenamiento
-7. Resultados
+7. Conectando el modelo con el simulador de Udacity
+8. Resultados
 
 ## 1. Diagrama del proyecto
 
@@ -55,3 +56,12 @@ El archivo *Optimization train CSNN v13.ipynb* contiene el código por medio del
 
 ## 6. Midiendo la Ecoeficiencia del entrenamiento
 
+La librería CodeCarbon se integra con el proyecto a través de pocas líneas de código y permite estimar la cantidad de dióxido de carbono (CO2) producido por los recursos informáticos personales o en la nube utilizados para ejecutar el código.
+
+'''
+tracker = EmissionsTracker(output_dir='/ubicacion_para_guardar_archivo_seguimiento', project_name=f"emissions_train_time}.csv")
+tracker.start()
+...Código a ejecutar
+tracker.stop()
+'''
+Y el resultado es un archivo con la información de la energía consumida y las emisiones generadas entre otros.
