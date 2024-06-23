@@ -67,9 +67,13 @@ class Config:
     min_delta = 0.001  # Parámetro de cambio mínimo para EarlyStopping
 ```
 
-Una vez el entrenamiento finaliza, el mejor modelo obtenido se guarda en formato ".pth". Dos ejemplos de estos modelos con diferentes hiperparámetros corresponden a
+Una vez el entrenamiento finaliza, el mejor modelo obtenido se guarda en formato ".pth". Dos ejemplos de estos modelos con diferentes hiperparámetros corresponden a:
 
-* 
+best_model_20240618_071017_32_lr-3.pth --> Mejor modelo obtenido con batch size de 32, learning rate de 0.001 y 50 épocas
+
+best_model_20240618_075633_256_lr-3_200ep.pth --> Mejor modelo obtenido con batch size de 256, learning rate de 0.001 y 200 épocas
+
+
 
 ## 6. Midiendo la Ecoeficiencia del entrenamiento
 
@@ -86,4 +90,19 @@ Y el resultado es un archivo csv con la información de la energía consumida y 
 
 ## 7. Conectando el modelo con el simulador de Udacity
 
-El mejor modelo obtenido se prueba en el simulador de Udacity. Para ello se cuenta con el script de Python llamado "CSNN_drive_v12.py", Una vez se tiene el mejor modelo, este se utiliza con un Script de Python que corre localmente y es el que establece la conexión con Udacity. Este Script implementa la arquitectura adaptada de PilotNet, carga los parámetros 
+El mejor modelo obtenido se prueba en el simulador de Udacity. Para ello se cuenta con el script de Python llamado "CSNN_drive_v13.py", que se corre localmente en un entorno virtual con los requerimientos que se encuentran en el archivo "requirements.txt".
+
+Este script realiza varias tareas, primero configura la arquitectura de la CSNN con adaptación de PilotNet, los pesos y sesgos de esta red se cargan desde el archivo del mejor modelo obtenido. Por otra parte, toma las imágenes provenientes del simulador, las agrupa en parejas y les aplica la modulación delta de la librería snntorch, para convertirlas en impulsos. Esta representacion en impulsos se pasa al modelo, que gnera un ángulo de giro del volante como salida codificado en 21 posiciones, por lo que convierte este formato en un valor entre -1 y 1 para ser enviado al simulador. 
+
+El script también controla la velocidad mínima y máxima del vehículo. Y finalmente establece los parámetros de configuración de red para conectarse con el simulador de Udacity en la que el paquete [Flask](https://flask.palletsprojects.com/en/3.0.x/) juega un papel muy importante, ya que hace las veces de servidor web que maneja la comunicación entre el simulador de conducción y el modelo de red neuronal convolucional de impulsos (CSNN). La biblioteca Flask, junto con SocketIO y Eventlet, se emplea para recibir datos de telemetría del simulador y enviar comandos de control en tiempo real.
+
+Estas son algunas de las características de Flask en el script:
+
+Servidor Web: Flask se utiliza para crear un servidor web ligero que puede recibir y procesar solicitudes HTTP. En este contexto, se utiliza junto con SocketIO para manejar la comunicación bidireccional en tiempo real entre el simulador y el servidor.
+
+Manejo de Telemetría: Flask recibe los datos de telemetría enviados por el simulador, que incluyen la imagen de la cámara frontal del coche y la velocidad actual del vehículo. Estos datos son necesarios para que el modelo pueda predecir el ángulo de dirección adecuado.
+
+Interacción en Tiempo Real: Flask, combinado con SocketIO, permite el manejo de eventos en tiempo real. Esto significa que el servidor puede recibir continuamente datos de telemetría, procesarlos y enviar comandos de control de vuelta al simulador de manera rápida y eficiente.
+
+Integración con SocketIO: SocketIO extiende las capacidades de Flask al permitir comunicaciones basadas en eventos. Esto es crucial para aplicaciones en tiempo real como el control de un coche autónomo, donde los datos y comandos deben intercambiarse sin retrasos significativos.
+
