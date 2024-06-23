@@ -58,10 +58,11 @@ El archivo *Optimization train CSNN v13.ipynb* contiene el código por medio del
 
 La librería CodeCarbon se integra con el proyecto a través de pocas líneas de código y permite estimar la cantidad de dióxido de carbono (CO2) producido por los recursos informáticos personales o en la nube utilizados para ejecutar el código.
 
-'''
+```
 tracker = EmissionsTracker(output_dir='/ubicacion_para_guardar_archivo_seguimiento', project_name=f"emissions_train_time}.csv")
 tracker.start()
 ...Código a ejecutar
 tracker.stop()
-'''
+```
+
 Y el resultado es un archivo con la información de la energía consumida y las emisiones generadas entre otros.
