@@ -106,3 +106,29 @@ Interacción en Tiempo Real: Flask, combinado con SocketIO, permite el manejo de
 
 Integración con SocketIO: SocketIO extiende las capacidades de Flask al permitir comunicaciones basadas en eventos. Esto es crucial para aplicaciones en tiempo real como el control de un coche autónomo, donde los datos y comandos deben intercambiarse sin retrasos significativos.
 
+En esta parte del proyecto resultó de mucha utilidad el material disponible en este [repositorio](https://github.com/entbappy/Complete-Self-Driving-Car) de "entbappy".
+
+## 8. Resultados
+
+Se realizaron las mediciones de ecoeficiencia de la codificación de imágenes en impulsos y del entrenamiento de la CSNN. 
+
+La siguiente figura, presenta los resultados de la medición para el proceso de codificación de imágenes con diferentes entornos de ejecución:
+
+![Codificacion_delta](Images/Codificacion_delta.png)
+
+El menor nivel de emisiones generadas se consigue con la configuración de GPU T4 del entorno de Google Colab con una duración de 197 segundos.
+
+![Entrenamiento_CSNN](Images/Entrenamiento_CSNN.png)
+
+La mejor configuración de entorno para el entranimiento se consigue con el modelo de GPU L4, con alrededor de 174 segundos de ejecución generando 0.00175 Kg de CO2 y consumiendo 0.00358 de KWh.
+
+La siguiente tabla presenta la comparación de estos resultados con los obtenidos en el artículo de referencia de: Martínez, F. S., Parada, R., & Casas-Roma, J. (2023). CO2 impact on convolutional network model training for autonomous driving through behavioral cloning. Advanced Engineering Informatics, 56, 101968. [https://doi.org/10.1016/j.aei.2023.101968](https://doi.org/10.1016/j.aei.2023.101968) 
+
+![Comparativo.png](Images/Comparativo.png)
+
+
+
+
+
+
+
