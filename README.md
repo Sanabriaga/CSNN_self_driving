@@ -126,6 +126,15 @@ La siguiente tabla presenta la comparación de estos resultados con los obtenido
 
 ![Comparativo.png](Images/Comparativo.png)
 
+\* Esta información fue tomada de las Tablas 6 y 7 del artículo de referencia.
+
+Se puede observar que la CSNN se entrenó en cerca de la mitad del tiempo, lo que es congruente con la energía consumida y las emisiones generadas con una proporcion igual frente al trabajo de referencia.
+
+
+## 9. Contacto
+
+En caso de requerir acceso a los datos de este proyecto no dude en contactar a: asanabriaga@uoc.edu
+
 
 
 
