@@ -54,6 +54,23 @@ El archivo *Optimization_Encode_Spikes_v12.ipynb* contiene el código por medio 
 
 El archivo *Optimization train CSNN v13.ipynb* contiene el código por medio del cual se define la arquitectura adaptada de PilotNet para construir la CSNN. Se adapta en varios aspectos, el primero es el uso de neuronas con modelo Leaky Integrate-and-Fire (LIF), el segundo es la eliminación de una capa convolucional, dejando cuatro capas convolucionales y cuatro capas completamente conectadas y finalmente la salida corresponde a 21 neuronas que codifican el valor del ángulo de giro del volante entre -1 y 1 en 21 pasos, es decir, la activación de la neurona 0 corresponde al ángulo -1, la activación de la neurona 10 al ángulo 0 y la activación de la neurona 20 al ángulo 1, con los posibles pasos intermedios entre estos valores.
 
+Es importante mencionar que en la búsqueda de mejores resultados hay una sección para ajuste de hiperparámetros, esta sección luce de la siguiente forma:
+
+```
+# Sección de Hiperparámetros
+class Config:
+    batch_size = 256
+    learning_rate = 0.001
+    num_epochs = 200
+    beta = 0.9  # Parámetro de decaimiento para las capas LIF
+    patience = 10  # Parámetro de paciencia para EarlyStopping
+    min_delta = 0.001  # Parámetro de cambio mínimo para EarlyStopping
+```
+
+Una vez el entrenamiento finaliza, el mejor modelo obtenido se guarda en formato ".pth". Dos ejemplos de estos modelos con diferentes hiperparámetros corresponden a
+
+* 
+
 ## 6. Midiendo la Ecoeficiencia del entrenamiento
 
 La librería CodeCarbon se integra con el proyecto a través de pocas líneas de código y permite estimar la cantidad de dióxido de carbono (CO2) producido por los recursos informáticos personales o en la nube utilizados para ejecutar el código.
@@ -66,3 +83,7 @@ tracker.stop()
 ```
 
 Y el resultado es un archivo csv con la información de la energía consumida y las emisiones generadas entre otros.
+
+## 7. Conectando el modelo con el simulador de Udacity
+
+El mejor modelo obtenido se prueba en el simulador de Udacity. Para ello se cuenta con el script de Python llamado "CSNN_drive_v12.py", Una vez se tiene el mejor modelo, este se utiliza con un Script de Python que corre localmente y es el que establece la conexión con Udacity. Este Script implementa la arquitectura adaptada de PilotNet, carga los parámetros 
