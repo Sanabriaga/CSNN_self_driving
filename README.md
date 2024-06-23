@@ -19,6 +19,7 @@ Los resultados obtenidos contribuirán al conocimiento sobre la aplicación de S
 6. Midiendo la Ecoeficiencia del entrenamiento
 7. Conectando el modelo con el simulador de Udacity
 8. Resultados
+9. Contacto
 
 ## 1. Diagrama del proyecto
 
@@ -72,8 +73,6 @@ Una vez el entrenamiento finaliza, el mejor modelo obtenido se guarda en formato
 best_model_20240618_071017_32_lr-3.pth --> Mejor modelo obtenido con batch size de 32, learning rate de 0.001 y 50 épocas
 
 best_model_20240618_075633_256_lr-3_200ep.pth --> Mejor modelo obtenido con batch size de 256, learning rate de 0.001 y 200 épocas
-
-
 
 ## 6. Midiendo la Ecoeficiencia del entrenamiento
 
