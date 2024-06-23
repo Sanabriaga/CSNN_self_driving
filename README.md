@@ -65,4 +65,4 @@ tracker.start()
 tracker.stop()
 ```
 
-Y el resultado es un archivo con la información de la energía consumida y las emisiones generadas entre otros.
+Y el resultado es un archivo csv con la información de la energía consumida y las emisiones generadas entre otros.
